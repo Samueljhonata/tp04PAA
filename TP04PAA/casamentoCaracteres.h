@@ -11,5 +11,9 @@
 typedef char TipoTexto[MAXTAMTEXTO] ;
 typedef char TipoPadrao[MAXTAMPADRAO] ;
 
+int carregaArquivo(char *nomeArq, char* texto);
+long ForcaBruta(TipoTexto T, long n, TipoPadrao P, long m);
+long BMH(TipoTexto T, long n, TipoPadrao P, long m);
+
 #endif /* CASAMENTOCARACTERES_H */
 

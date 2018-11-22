@@ -17,7 +17,6 @@ int carregaArquivo(char *nomeArq, char* texto) {
         while( (fgets(temp, sizeof(temp), arq))!=NULL ) { //enquanto o arquivo não termina
             strcat(texto,temp);
         }
-        //printf("%s",texto);
     }
 
     fclose(arq);

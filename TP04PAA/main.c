@@ -73,24 +73,5 @@ int main(int argc, char** argv) {
         printf("\n");
     }
 
-
-    /*if (carregaArquivo("teste.txt", t)) {
-        printf("\nTexto carregado: \n\"%s\"\n", t);
-        printf("\nPadrao a ser pesquisado: \n\"%s\"\n", p);
-
-        printf("\nForca Bruta:");
-        ForcaBruta(t, strlen(t), p, strlen(p));
-        printf("\nBMH:");
-
-        BMH(t, strlen(t), p, strlen(p));
-    }*/
-
-    //    
-
-    /*printf("%d x %d = %d\n",strlen(t),strlen(p),strlen(t)*strlen(p));
-    ForcaBruta(t,strlen(t),p,strlen(p));
-    printf("\n\n\n");
-    
-    BMH(t,strlen(t),p,strlen(p));*/
 }
 
