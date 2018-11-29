@@ -1,9 +1,12 @@
-
+#include <time.h>
+#include <string.h>
 #include "casamentoCaracteres.h"
 
 int main(int argc, char** argv) {
     int opcao = -1, carregadoSucesso = 0;
     char nomeArq[50];
+    double Tempo;
+    clock_t Ticks[2];//definindo variaveis para contagem de tempo
     TipoPadrao p;
     TipoTexto t;
 
@@ -54,11 +57,20 @@ int main(int argc, char** argv) {
                     scanf("%s", &p);
                     fflush(stdout);
 
-                    printf("\nForca Bruta:");
+                    printf("\nForca Bruta:\n");
+                    Ticks[0] = clock();
                     ForcaBruta(t, strlen(t), p, strlen(p));
-                    printf("\nBMH:");
+                    Ticks[1] = clock();
+                    Tempo = (Ticks[1] - Ticks[0]) * 1000.0 / CLOCKS_PER_SEC;
+                    printf("Tempo gasto: %g ms.", Tempo);
 
+
+                    printf("\nBMH:");
+                    Ticks[0] = clock();
                     BMH(t, strlen(t), p, strlen(p));
+                    Ticks[1] = clock();
+                    Tempo = (Ticks[1] - Ticks[0]) * 1000.0 / CLOCKS_PER_SEC;
+                    printf("Tempo gasto: %g ms.", Tempo);
 
                 } else {
                     printf("\n -- Primeiro carregue um arquivo");

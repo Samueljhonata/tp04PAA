@@ -6,7 +6,7 @@
 int carregaArquivo(char *nomeArq, char* texto) {
     FILE *arq;
     char temp[MAXTAMTEXTO];
-    
+
     arq = fopen(nomeArq, "r");
 
     if (arq == NULL) { //erro ao carregar arquivo
@@ -14,7 +14,7 @@ int carregaArquivo(char *nomeArq, char* texto) {
         return 0;
     } else {
         strcpy(texto,"");
-        while( (fgets(temp, sizeof(temp), arq))!=NULL ) { //enquanto o arquivo n√£o termina
+        while( (fgets(temp, sizeof(temp), arq))!=NULL ) { //enquanto o arquivo n„o termina
             strcat(texto,temp);
         }
     }
@@ -24,7 +24,7 @@ int carregaArquivo(char *nomeArq, char* texto) {
 }
 
 
-long ForcaBruta(TipoTexto T, long n, TipoPadrao P, long m) {
+void ForcaBruta(TipoTexto T, long n, TipoPadrao P, long m) {
     long i, j, k, tempo = 0;
     printf(" Casamento na(s) posicao(oes): ");
     for (i = 1; i <= (n - m + 1); i++) {
@@ -40,11 +40,11 @@ long ForcaBruta(TipoTexto T, long n, TipoPadrao P, long m) {
             printf("%3ld, ", i);
         }
     }
-    printf("\n Tempo: %ld", tempo);
-    return tempo;
+    //printf("\n Tempo: %ld", tempo);
+    //return tempo;
 }
 
-long BMH(TipoTexto T, long n, TipoPadrao P, long m) {
+void BMH(TipoTexto T, long n, TipoPadrao P, long m) {
     long i, j, k, d[MAXCHAR + 1], tempo = 0;
     for (j = 0; j <= MAXCHAR; j++) d[ j ] = m;
     for (j = 1; j < m; j++) d[P[ j - 1]] = m - j;
@@ -63,6 +63,6 @@ long BMH(TipoTexto T, long n, TipoPadrao P, long m) {
             printf("%3ld, ", k + 1);
         i += d[T[i - 1]];
     }
-    printf("\n Tempo: %ld", tempo);
-    return tempo;
+    //printf("\n Tempo: %ld", tempo);
+    //return tempo;
 }
